@@ -8,7 +8,11 @@ $bannerList = array(
 			);
 
 $bannerKeys = array_keys($bannerList);
-if ( ($bannerKey = $_GET['type']) && in_array($bannerKey, $bannerKeys)) {
+if (isset($_GET['type']) &&  ($bannerKey = $_GET['type']) && in_array($bannerKey, $bannerKeys)) {
 	echo sprintf("<img src=\"statics/images/v9/%s\" />", $bannerList[$bannerKey]);	
+} else {
+
+	echo sprintf("<img src=\"statics/images/v9/%s\" />", 'office-01.jpg');	
+
 }
 

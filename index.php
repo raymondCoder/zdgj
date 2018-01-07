@@ -20,6 +20,15 @@ ul, ol, li {
 clear:both;
 } 
 
+.hotline {
+	font-size: 12px;
+	color: white;
+}
+.TelHotline {
+	font-size: 40px;
+	color: gold;
+	line-height: 44px;
+}
 .container{
 	
 }
@@ -36,7 +45,11 @@ clear:both;
 	border-bottom-right-radius:6px;
 	background-color:white;
 }
-
+.caseItem {
+	float: left;
+	padding: 10px;
+	color: #666;
+}
 .header-menu {
 	float: left;
 	margin-left:40px;
@@ -44,7 +57,6 @@ clear:both;
 
 .header-tel {
 	float: right;
-	background-color: white;
 	padding: 0px 10px;
 }
 
@@ -95,6 +107,11 @@ clear:both;
 	width:100%;
 	height:400px;
 	overflow:hidden;
+}
+
+.middle .banner_se img{
+	width:100%;
+	height:400px;
 }
 
 .middle .middle-content{
@@ -160,6 +177,10 @@ clear:both;
 	font-size: 12px;
 }
 
+.shejishi {
+	float: left;
+	padding: 10px;
+}
 
 .footer {
 	width: 100%;
@@ -183,7 +204,7 @@ clear:both;
         <div class="wp-inner">
             <div class="clearfix">
                 <div class="header-logo">
-					<h1><a href="/"><img src="http://www.zhangdianguoji.com/statics/images//logo.png" alt="小马装 - 专注互联网办公装修" width="298" height="75"></a></h1>
+					<h1><a href="/"><img src="http://www.zhangdianguoji.com/statics/images//logo.png" alt="彰典国际设计 倾力打造中国装饰高端品牌" width="298" height="75"></a></h1>
                 </div>
                 <div class="header-menu">
                     <ul class="clearfix">
@@ -199,7 +220,10 @@ clear:both;
 				
 				
 				<div class="header-tel">      			
-      				<div class="index_top_2"><img src="./quote/index_top3.jpg"></div>				
+      				<div class="index_top_2">
+      				  <div class="hotline">24小时免费服务热线</div>
+      				  <div class="TelHotline">400-6285-555</div>
+      				</div>				
                 </div>
         </div>
     </div>
@@ -207,20 +231,27 @@ clear:both;
 	</div>
 	
 	<div class="middle">
+	
 		<div class="banner_se">
 			<?php include ('include/bannerSection.php') ?>
 		</div>
 		
 		<div class="middle-content clearfix">
+		<?php 
+		if(!$_GET){
+		 	include ('include/homepage.php');
+		} else {?>
 			<div class='content-left'>
-				<?php include('include/nav-1.php') ?>
+				<?php include('include/nav.php') ?>
 			</div>
 			
 			<div class="content-right">
-				<?php include('include/content-1.php') ?>
+				<?php include('include/content.php') ?>
 			</div>
+		<?php } ?>
 			<br class="clearfix" />
 		</div>
+		
 	</div>
 	
   <div class="footer">

@@ -20,12 +20,17 @@ ul, ol, li {
 clear:both;
 } 
 
+.ctt_1_ys1 {
+	background-color: #cceeff;
+	width: 200px;
+}
+
 .hotline {
 	font-size: 12px;
 	color: white;
 }
 .TelHotline {
-	font-size: 40px;
+	font-size: 30px;
 	color: gold;
 	line-height: 44px;
 }
@@ -126,6 +131,7 @@ clear:both;
 	border:1px solid #eee;
 	padding:20px;
 	color:#666666;
+	background-color:#FFFFFF;
 }
 
 .middle .middle-content .content-left a{
@@ -262,10 +268,35 @@ clear:both;
 
 </div>
 <script type="text/javascript">
-$(function(){
-	$(window).on('scroll', function(){
-		var posChanged = true, type=0;
-		
+function moveNav()
+{
+	var posChanged = true, type=0;
+	if($(window).scrollTop() > 319 ){
+		if(type!=1) {
+				type=1;
+				posChanged = true
+		}
+		if (posChanged) {
+				$('.content-left').css({position:'fixed', top:'100px',zIndex:99});
+				$('.content-right').css({marginLeft:'248px'});
+				posChanged = false;
+		}
+	} else {
+			//case 2
+			if(type!=2){
+			   type =2;
+			   posChanged = true
+			}
+			if (posChanged) {
+				$('.content-left').css({position:'relative', top:'0px'});
+				$('.content-right').css({marginLeft:'10px'});
+				posChanged = false;
+			}
+	}
+}
+
+function move(){
+     var posChanged = true, type=0;
 		if($(window).scrollTop() > 91 ){
 		//case 1
 			if(type!=1) {
@@ -274,8 +305,8 @@ $(function(){
 			}
 			if (posChanged) {
 				$('.page-header').css({position:'fixed'});
-				$('.content-left').css({position:'fixed', top:'100px',zIndex:99});
-				$('.content-right').css({marginLeft:'248px'});
+				//$('.content-left').css({position:'fixed', top:'100px',zIndex:99});
+				//$('.content-right').css({marginLeft:'248px'});
 				posChanged = false;
 			}
 		} else {
@@ -286,11 +317,16 @@ $(function(){
 			}
 			if (posChanged) {
 				$('.page-header').css({position:'relative'});
-				$('.content-left').css({position:'relative', top:'0px'});
-				$('.content-right').css({marginLeft:'10px'});
+				//$('.content-left').css({position:'relative', top:'0px'});
+				//$('.content-right').css({marginLeft:'10px'});
 				posChanged = false;
 			}
 		}
+}
+$(function(){
+	$(window).on('scroll', function(){
+		move();
+		moveNav();
 	});
 });
 </script>

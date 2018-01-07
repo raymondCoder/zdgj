@@ -1,5 +1,5 @@
 <div class="nei_bg">
-<h1>ss</h1>
+<h1>装修案例</h1>
   <ul class="nei">
 
      <?php for($i=0; $i< 50; $i++) { ?> 
